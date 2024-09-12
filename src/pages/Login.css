@@ -19,6 +19,7 @@ html, body {
 
 .text-fields {
     display: grid;
+    row-gap: 10px;
 }
 
 .bottom-bar {
