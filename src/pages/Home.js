@@ -7,6 +7,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
 import TotalFunds from "../request/TotalFunds";
+import GetPartitions from "../request/GetPartitions";
 
 export default function Home() {
     const { state } = useLocation();
@@ -18,7 +19,8 @@ export default function Home() {
     //const [totalFunds, setTotalFunds] = useState(0);
 
     const totalFunds = TotalFunds(username, password);
-
+    const partitions = GetPartitions(username, password);
+    /*
     const [partitions, setPartitionFunds] = useState([
     {
         name: "essential",
@@ -29,6 +31,7 @@ export default function Home() {
         amount: 363485
     }
     ])
+    */
 
     return (
         <html>
