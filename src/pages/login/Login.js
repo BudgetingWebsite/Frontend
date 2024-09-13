@@ -37,32 +37,55 @@ export default function Login() {
 
     CreateAccount(register, username, password);
 
+    function Title() {
+        return (
+            <div className={classes.title}>
+                <h1>Budgeting Website</h1>
+            </div>
+        );
+    }
+
+    function TextFields() {
+        return (
+            <div className={classes.text_fields}>
+                <TextField label="username" variant="outlined" value={username} onChange={handleUsername}/>
+                <TextField label="password" variant="outlined" value={password} onChange={handlePassword}/>
+            </div>
+        );
+    }
+
+    function Buttons() {
+        return (
+            <div className={classes.buttons}>
+                <Button variant="outlined" onClick={login}>login</Button>
+                <Button variant="outlined" onClick={doRegister}>register</Button>
+            </div>
+        );
+    }
+
+    function BottomBar() {
+        return (
+            <div className={classes.bottom_bar}>
+                <a href="https://github.com/BudgetingWebsite">
+                    <img src={mark} />
+                </a>
+                <em>Developed by Andrew Moseman</em>
+            </div>
+        );
+    }
+
     return (
         <html>
         <body>
-                <title>Budgeting Website</title>
-                <div className={classes.center}>
+            <title>Budgeting Website</title>
+            <div className={classes.center}>
                 <div className={classes.container}>
-                    <div className={classes.title}>
-                        <h1>Budgeting Website</h1>
-                    </div>
-                    <div className={classes.text_fields}>
-                        <TextField label="username" variant="outlined" value={username} onChange={handleUsername}/>
-                        <TextField label="password" variant="outlined" value={password} onChange={handlePassword}/>
-                    </div>
-                    <div className={classes.buttons}>
-                        <Button variant="outlined" onClick={login}>login</Button>
-                        <Button variant="outlined" onClick={doRegister}>register</Button>
-                    </div>
+                    {Title()}
+                    {TextFields()}
+                    {Buttons()}
                 </div>
-                </div>
-
-                <div className={classes.bottom_bar}>
-                    <a href="https://github.com/BudgetingWebsite">
-                        <img src={mark} />
-                    </a>
-                    <em>Developed by Andrew Moseman</em>
-                </div>
+            </div>
+        {BottomBar()}
         </body>
         </html>
     );
