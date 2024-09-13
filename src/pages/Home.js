@@ -1,66 +1,49 @@
-import "./Login.css"
 import * as React from "react";
-import Box from "@mui/material/Box";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import mark from "../github-mark.svg"
+import TotalFunds from "../request/TotalFunds";
 
-export default function Login() {
+export default function Home() {
+    const { state } = useLocation();
+    const username = state["username"]
+    const password = state["password"]
+    const [ result, setResult ] = useState("");
     const navigate = useNavigate();
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
 
-    function handleUsername(e) {
-        setUsername(e.target.value);
-    }
-    function handlePassword(e) {
-        setPassword(e.target.value);
-    }
+    //const [totalFunds, setTotalFunds] = useState(0);
 
-    function login() {
-        navigate("/home", {
-            state: {"username": username, "password": password}
-        });
-    }
+    const totalFunds = TotalFunds(username, password);
 
-    function register() {
-        navigate("/register", {
-            state: {"username": username, "password": password}
-        });
+    const [partitions, setPartitionFunds] = useState([
+    {
+        name: "essential",
+        amount: 45357
+    },
+    {
+        name: "savings",
+        amount: 363485
     }
+    ])
 
     return (
         <html>
-        <head>
-            <title>Budgeting Website</title>
-        </head>
-        <body>
-                <div class="center">
-                <div class="container">
-                    <div class="title">
-                        <h1>Budgeting Website</h1>
-                    </div>
-                    <div class="text-fields">
-                        <TextField label="username" variant="outlined" value={username} onChange={handleUsername}/>
-                        <TextField label="password" variant="outlined" value={password} onChange={handlePassword}/>
-                    </div>
-                    <div class="buttons">
-                        <Button variant="filled" onClick={login}>login</Button>
-                        <Button variant="filled" onClick={register}>register</Button>
-                    </div>
-                </div>
-                </div>
-
-                <div class="bottom-bar">
-                    <a href="https://github.com/BudgetingWebsite/Frontend">
-                        <img src={mark} />
-                    </a>
-                    <em>Developed by Andrew Moseman</em>
-                </div>
-    </body>
+            <body>
+            <p>Logged in as {username}</p>
+            <p>Funds: {totalFunds}</p>
+            <div>{partitions.map(item => (
+                <ListItem key={item.name} primaryText={item.name}>
+                    <div>{item.name}: ${item.amount/100}</div>
+                </ListItem>
+            ))}</div>
+            <Button>Events</Button>
+            <Button>Partitions</Button>
+            <Button>Budgets</Button>
+            </body>
         </html>
     );
 }
