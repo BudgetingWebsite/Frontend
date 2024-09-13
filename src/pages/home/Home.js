@@ -31,7 +31,7 @@ export default function Home() {
         <html>
             <body>
             <div className={classes.top_bar}>
-                <p>Account: {username}</p>
+                <div>Account: {username}</div>
                 <Button variant="outlined">Account</Button>
                 <Button variant="outlined" onClick={logout}>Logout</Button>
             </div>

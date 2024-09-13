@@ -13,6 +13,7 @@ html, body {
     text-align: center;
     flex: 1 0 10%;
     padding-bottom: 8px;
+    padding-top: 8px;
     border-style: none none solid none;
 }
 
