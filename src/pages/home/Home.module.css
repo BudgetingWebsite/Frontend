@@ -1,0 +1,72 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.top_bar {
+    padding-right: 8px;
+    display: grid;
+    justify-content: right;
+    align-items: center;
+    text-align: center;
+    flex: 1 0 10%;
+    padding-bottom: 8px;
+    border-style: none none solid none;
+}
+
+.top_bar Button {
+    margin-top: 8px;
+}
+
+.center_bar {
+    flex: 1 1 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom_bar {
+    flex: 1 0 10%;
+    text-align: center;
+}
+
+.left_column {
+    width: 25%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.left_column .container {
+    border-style: solid solid solid none;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.left_column .container div {
+    padding: 8px;
+}
+
+
+.left_column .partitions {
+    border-style: dotted none none none;
+}
+
+.center_column {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right_column {
+    width: 25%;
+}
+
+.buttons {
+    display: inline-grid;
+    grid-auto-flow: row;
+    grid-auto-columns: max-content;
+    row-gap: 8px;
+}

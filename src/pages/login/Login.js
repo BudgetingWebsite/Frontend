@@ -1,4 +1,6 @@
-import "./Login.css"
+import classes from  "./Login.module.css";
+import "../Main.css";
+
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -6,9 +8,9 @@ import TextField from "@mui/material/TextField";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import mark from "../github-mark.svg"
+import mark from "../../github-mark.svg"
 
-import CreateAccount from "../request/CreateAccount";
+import CreateAccount from "../../request/CreateAccount";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -37,33 +39,31 @@ export default function Login() {
 
     return (
         <html>
-        <head>
-            <title>Budgeting Website</title>
-        </head>
         <body>
-                <div class="center">
-                <div class="container">
-                    <div class="title">
+                <title>Budgeting Website</title>
+                <div className={classes.center}>
+                <div className={classes.container}>
+                    <div className={classes.title}>
                         <h1>Budgeting Website</h1>
                     </div>
-                    <div class="text-fields">
+                    <div className={classes.text_fields}>
                         <TextField label="username" variant="outlined" value={username} onChange={handleUsername}/>
                         <TextField label="password" variant="outlined" value={password} onChange={handlePassword}/>
                     </div>
-                    <div class="buttons">
+                    <div className={classes.buttons}>
                         <Button variant="outlined" onClick={login}>login</Button>
                         <Button variant="outlined" onClick={doRegister}>register</Button>
                     </div>
                 </div>
                 </div>
 
-                <div class="bottom-bar">
+                <div className={classes.bottom_bar}>
                     <a href="https://github.com/BudgetingWebsite/Frontend">
                         <img src={mark} />
                     </a>
                     <em>Developed by Andrew Moseman</em>
                 </div>
-    </body>
+        </body>
         </html>
     );
 }
