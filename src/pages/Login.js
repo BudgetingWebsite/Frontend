@@ -51,8 +51,8 @@ export default function Login() {
                         <TextField label="password" variant="outlined" value={password} onChange={handlePassword}/>
                     </div>
                     <div class="buttons">
-                        <Button variant="filled" onClick={login}>login</Button>
-                        <Button variant="filled" onClick={doRegister}>register</Button>
+                        <Button variant="outlined" onClick={login}>login</Button>
+                        <Button variant="outlined" onClick={doRegister}>register</Button>
                     </div>
                 </div>
                 </div>
