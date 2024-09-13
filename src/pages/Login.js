@@ -8,10 +8,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import mark from "../github-mark.svg"
 
+import CreateAccount from "../request/CreateAccount";
+
 export default function Login() {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [register, setRegister] = useState(false);
 
     function handleUsername(e) {
         setUsername(e.target.value);
@@ -26,11 +29,11 @@ export default function Login() {
         });
     }
 
-    function register() {
-        navigate("/register", {
-            state: {"username": username, "password": password}
-        });
+    function doRegister() {
+        setRegister(true);
     }
+
+    CreateAccount(register, username, password);
 
     return (
         <html>
@@ -49,7 +52,7 @@ export default function Login() {
                     </div>
                     <div class="buttons">
                         <Button variant="filled" onClick={login}>login</Button>
-                        <Button variant="filled" onClick={register}>register</Button>
+                        <Button variant="filled" onClick={doRegister}>register</Button>
                     </div>
                 </div>
                 </div>

@@ -16,22 +16,8 @@ export default function Home() {
     const [ result, setResult ] = useState("");
     const navigate = useNavigate();
 
-    //const [totalFunds, setTotalFunds] = useState(0);
-
     const totalFunds = TotalFunds(username, password);
     const partitions = GetPartitions(username, password);
-    /*
-    const [partitions, setPartitionFunds] = useState([
-    {
-        name: "essential",
-        amount: 45357
-    },
-    {
-        name: "savings",
-        amount: 363485
-    }
-    ])
-    */
 
     return (
         <html>

@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 
 export default function GetPartitions(username, password) {
-    const [result, setResult] = useState([]);
+    const [ result, setResult ] = useState([]);
     useEffect(() => {
         const options = {
             method: "GET",
