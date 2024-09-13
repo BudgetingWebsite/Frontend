@@ -58,7 +58,7 @@ export default function Login() {
                 </div>
 
                 <div className={classes.bottom_bar}>
-                    <a href="https://github.com/BudgetingWebsite/Frontend">
+                    <a href="https://github.com/BudgetingWebsite">
                         <img src={mark} />
                     </a>
                     <em>Developed by Andrew Moseman</em>
