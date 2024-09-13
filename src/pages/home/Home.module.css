@@ -14,7 +14,7 @@ html, body {
     flex: 1 0 10%;
     padding-bottom: 8px;
     padding-top: 8px;
-    border-style: none none solid none;
+    border-style: none none dashed none;
 }
 
 .top_bar Button {
@@ -31,6 +31,7 @@ html, body {
 .bottom_bar {
     flex: 1 0 10%;
     text-align: center;
+    border-style: dashed none none none;
 }
 
 .left_column {
@@ -38,11 +39,15 @@ html, body {
     display: flex;
     justify-content: left;
     align-items: center;
+    margin-bottom: auto;
+    height: 75%;
 }
 
 .left_column .container {
-    border-style: solid solid solid none;
-    border-radius: 0px 8px 8px 0px;
+    border-style: none solid solid none;
+    border-radius: 0px 0px 8px 0px;
+    height: 100%;
+    width: 100%;
 }
 
 .left_column .container div {
@@ -59,10 +64,22 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 75%;
+    margin-bottom: auto;
+
 }
 
 .right_column {
     width: 25%;
+    height: 75%;
+    margin-bottom: auto;
+}
+
+.right_column .container {
+    border-style: none solid solid solid;
+    border-radius: 0px 0px 0px 8px;
+    height: 100%;
+    width: 100%;
 }
 
 .buttons {

@@ -31,7 +31,7 @@ export default function Home() {
         <html>
             <body>
             <div className={classes.top_bar}>
-                <div>Account: {username}</div>
+                <div><em>{username}</em></div>
                 <Button variant="outlined">Account</Button>
                 <Button variant="outlined" onClick={logout}>Logout</Button>
             </div>
@@ -39,13 +39,10 @@ export default function Home() {
             <div className={classes.center_bar}>
                 <div className={classes.left_column}>
                     <div className={classes.container}>
-                        <div>Funds: {totalFunds}</div>
+                        <div>Total: ${totalFunds/100}</div>
                         <div className={classes.partitions}>
-                        <div>Partitions:</div>
                         {partitions.map(item => (
-                            <ListItem key={item.name} primaryText={item.name}>
-                                <div>{item.name}: ${item.amount/100}</div>
-                            </ListItem>
+                            <div>{item.name}: ${item.amount/100}</div>
                         ))}</div>
                     </div>
                 </div>
@@ -56,12 +53,15 @@ export default function Home() {
                             <Button variant="outlined">Events</Button>
                             <Button variant="outlined">Partitions</Button>
                             <Button variant="outlined">Budgets</Button>
+                            <Button variant="outlined">Statistics</Button>
                         </div>
                     </div>
                 </div>
 
                 <div className={classes.right_column}>
-
+                    <div className={classes.container}>
+                        <div>budgets go here</div>
+                    </div>
                 </div>
 
             </div>

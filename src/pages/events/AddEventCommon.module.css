@@ -1,0 +1,10 @@
+.stack {
+    margin-left: 20%;
+    width: 60%;
+    display: grid;
+}
+
+.buttons {
+    display: grid;
+    grid-auto-flow: column;
+}
