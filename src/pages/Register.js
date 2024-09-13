@@ -26,7 +26,7 @@ export default function Register() {
             }
         })
         .catch(error => setResult(error.toString()));
-    }, [])
+    }, []);
 
     return (
         <p>{result}</p>
