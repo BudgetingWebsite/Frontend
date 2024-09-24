@@ -1,4 +1,4 @@
-import classes from "./AddEventCommon.module.css";
+import classes from "./AddRecordCommon.module.css";
 
 import * as React from 'react';
 import { useState, useEffect } from "react";
@@ -9,7 +9,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-export default function AddEventCommon(
+export default function AddRecordCommon(
     [when, setWhen],
     [amount, setAmount],
     [category, setCategory],

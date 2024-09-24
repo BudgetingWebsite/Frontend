@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
-import AddEventCommon from "../AddEventCommon";
+import AddRecordCommon from "../AddRecordCommon";
 
 export default function AddIncome() {
     const [when, setWhen] = useState(null);
@@ -21,7 +21,7 @@ export default function AddIncome() {
         <html>
             <body>
                 <div className={classes.container}>
-                    {AddEventCommon()}
+                    {AddRecordCommon()}
                 </div>
             </body>
         </html>

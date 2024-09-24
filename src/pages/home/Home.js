@@ -9,7 +9,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
 import TotalFunds from "../../request/TotalFunds";
-import GetPartitions from "../../request/GetPartitions";
+import GetBuckets from "../../request/GetBuckets";
 
 export default function Home() {
     const { state } = useLocation();
@@ -19,12 +19,16 @@ export default function Home() {
     const navigate = useNavigate();
 
     const totalFunds = TotalFunds(username, password);
-    const partitions = GetPartitions(username, password);
+    const buckets = GetBuckets(username, password);
 
-    partitions[0] = {"name": "Example", "amount": 0};
+    buckets[0] = {"name": "Example", "amount": 0};
 
     function logout() {
         navigate("/");
+    }
+
+    function goToRecords() {
+        navigate("/records", {state: {"username": username, "password": password}})
     }
 
     return (
@@ -40,8 +44,8 @@ export default function Home() {
                 <div className={classes.left_column}>
                     <div className={classes.container}>
                         <div>Total: ${totalFunds/100}</div>
-                        <div className={classes.partitions}>
-                        {partitions.map(item => (
+                        <div className={classes.buckets}>
+                        {buckets.map(item => (
                             <div>{item.name}: ${item.amount/100}</div>
                         ))}</div>
                     </div>
@@ -50,8 +54,8 @@ export default function Home() {
                 <div className={classes.center_column}>
                     <div className={classes.container}>
                         <div className={classes.buttons}>
-                            <Button variant="outlined">Events</Button>
-                            <Button variant="outlined">Partitions</Button>
+                            <Button onClick={goToRecords} variant="outlined">Records</Button>
+                            <Button variant="outlined">Buckets</Button>
                             <Button variant="outlined">Budgets</Button>
                             <Button variant="outlined">Statistics</Button>
                         </div>

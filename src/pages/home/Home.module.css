@@ -55,7 +55,7 @@ html, body {
 }
 
 
-.left_column .partitions {
+.left_column .buckets {
     border-style: dotted none none none;
 }
 
