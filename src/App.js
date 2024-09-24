@@ -8,6 +8,8 @@ import Records from "./pages/records/Records";
 import AddIncome from "./pages/records/income/AddIncome.js";
 import AddExpense from "./pages/records/expense/AddExpense.js";
 
+import AddBucket from "./pages/buckets/AddBucket.js";
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +19,8 @@ function App() {
         <Route path="/records/" element={<Records />} />
         <Route path="/records/add/income" element={<AddIncome />} />
         <Route path="/records/add/expense" element={<AddExpense />} />
+
+        <Route path="/bucket/add" element={<AddBucket />} />
       </Routes>
     </BrowserRouter>
   );

@@ -18,10 +18,10 @@ export default function Home() {
     const [ result, setResult ] = useState("");
     const navigate = useNavigate();
 
-    const totalFunds = TotalFunds(username, password);
     const buckets = GetBuckets(username, password);
+    const totalFunds = TotalFunds(buckets);
 
-    buckets[0] = {"name": "Example", "amount": 0};
+    buckets[1] = {"name": "injected", "amount": 0};
 
     function logout() {
         navigate("/");
@@ -29,6 +29,10 @@ export default function Home() {
 
     function goToRecords() {
         navigate("/records", {state: {"username": username, "password": password}})
+    }
+
+    function addBucket() {
+        navigate("/bucket/add", {state: {"username": username, "password": password}})
     }
 
     return (
@@ -48,6 +52,8 @@ export default function Home() {
                         {buckets.map(item => (
                             <div>{item.name}: ${item.amount/100}</div>
                         ))}</div>
+
+                        <Button variant="outlined" onClick={addBucket}>Add Bucket</Button>
                     </div>
                 </div>
 
@@ -55,7 +61,6 @@ export default function Home() {
                     <div className={classes.container}>
                         <div className={classes.buttons}>
                             <Button onClick={goToRecords} variant="outlined">Records</Button>
-                            <Button variant="outlined">Buckets</Button>
                             <Button variant="outlined">Budgets</Button>
                             <Button variant="outlined">Statistics</Button>
                         </div>

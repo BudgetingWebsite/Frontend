@@ -21,7 +21,7 @@ export default function AddIncome() {
         <html>
             <body>
                 <div className={classes.container}>
-                    {AddRecordCommon()}
+                    {AddRecordCommon([when, setWhen], [amount, setAmount], [category, setCategory], [description, setDescription], handleAdd)}
                 </div>
             </body>
         </html>
