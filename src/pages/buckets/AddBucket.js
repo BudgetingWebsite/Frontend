@@ -1,3 +1,5 @@
+import classes from "./AddBucket.module.css";
+
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -33,11 +35,11 @@ export default function AddBucket() {
     CreateBucket(add, state["username"], state["password"], name, share);
 
     return (
-        <div>
+        <div className={classes.container}>
             <TextField value={name} onChange={handleName} label="name" />
             <TextField value={share} onChange={handleShare} label="share" />
-            <Button onClick={addBucket}>add</Button>
-            <Button onClick={cancel}>cancel</Button>
+            <Button variant="outlined" onClick={addBucket}>add</Button>
+            <Button variant="outlined" onClick={cancel}>cancel</Button>
         </div>
     );
 }
